@@ -16,7 +16,8 @@ class Mover {
     void init();
     void update();
     void display();
-    void checkEdges(); 
+    void checkEdges();
+    void applyForce(ofVec2f force); 
     
     // The Mover tracks location, velocity, and acceleration 
     ofVec2f location;
