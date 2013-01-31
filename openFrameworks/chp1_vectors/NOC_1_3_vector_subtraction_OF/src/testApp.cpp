@@ -24,7 +24,7 @@ void testApp::update(){
 void testApp::draw(){
 
     ofVec2f mouse;
-    mouse.set(ofGetMouseX(), ofGetMouseY());
+    mouse.set(mouseX, mouseY);
     
     ofVec2f center;
     center.set(ofGetWidth()/2,ofGetHeight()/2);

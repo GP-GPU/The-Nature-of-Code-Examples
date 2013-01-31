@@ -17,7 +17,7 @@ void Mover::update() {
     
     // Compute a vector that points from location to mouse
     ofVec2f mouse;
-    mouse.set(ofGetMouseX(),ofGetMouseY());
+    mouse.set(ofGetMouseX(), ofGetMouseY());
     ofVec2f acceleration;
     acceleration.set(mouse -location);
     
