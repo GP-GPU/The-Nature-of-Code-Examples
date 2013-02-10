@@ -13,7 +13,6 @@ class Mover {
     public:
     
     Mover();
-    void init(float m, float x , float y);
     void update();
     void display();
     void checkEdges();

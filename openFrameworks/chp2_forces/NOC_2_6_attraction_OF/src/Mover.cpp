@@ -10,8 +10,8 @@
 #include "Mover.h"
 
 Mover::Mover() {
-    location.set(30,30);
-    velocity.set(0,0);
+    location.set(400,50);
+    velocity.set(1,0);
     acceleration.set(0,0);
     mass = 1;
 }
@@ -33,23 +33,21 @@ void Mover::update() {
 void Mover::display(){
     ofFill();
     ofSetColor(127);
-    ofEllipse(location.x, location.y, 48, 48);
+    ofEllipse(location.x, location.y, 16, 16);
     
     ofNoFill();
     ofSetColor(0);
-    ofSetLineWidth(2);
-    ofEllipse(location.x, location.y, 48, 48);
+    ofSetLineWidth(1);
+    ofEllipse(location.x, location.y, 16, 16);
 }
 
 void Mover::checkEdges(){
     
     if (location.x > ofGetWidth()) {
-        location.x = ofGetWidth();
-        velocity.x *= -1;
+	location.x = 0;
     }
     else if (location.x < 0) {
-        velocity.x *= -1;
-        location.x = 0;
+	location.x = ofGetWidth();
     }
     
     if (location.y > ofGetHeight()) {

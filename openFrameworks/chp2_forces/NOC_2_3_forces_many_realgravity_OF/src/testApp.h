@@ -21,5 +21,5 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 
-		Mover m;
+		vector <Mover> movers;
 };

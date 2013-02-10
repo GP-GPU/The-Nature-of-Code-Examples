@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Mover.h"
+#include <iostream.h>
 
 class testApp : public ofBaseApp{
 
@@ -20,6 +21,5 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-
-		Mover m;
+		vector<Mover> movers;
 };
