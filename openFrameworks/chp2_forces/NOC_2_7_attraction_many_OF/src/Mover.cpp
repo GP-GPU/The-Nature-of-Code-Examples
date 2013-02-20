@@ -10,10 +10,17 @@
 #include "Mover.h"
 
 Mover::Mover() {
-    location.set(30,30);
-    velocity.set(0,0);
+    location.set(400,50);
+    velocity.set(1,0);
     acceleration.set(0,0);
     mass = 1;
+}
+
+void Mover::init(float m, float x , float y){
+	mass = m;
+    location.set(x,y);
+    velocity.set(1, 0);
+    acceleration.set(0, 0);
 }
 
 void Mover::applyForce(ofVec2f force) {
@@ -32,24 +39,24 @@ void Mover::update() {
 
 void Mover::display(){
     ofFill();
-    ofSetColor(127);
-    ofEllipse(location.x, location.y, 48, 48);
+    ofSetColor(0, 100);
+	ofEnableAlphaBlending();
+    ofEllipse(location.x, location.y, mass*25, mass*25);
+	ofDisableAlphaBlending();
     
     ofNoFill();
     ofSetColor(0);
-    ofSetLineWidth(2);
-    ofEllipse(location.x, location.y, 48, 48);
+    ofSetLineWidth(1);
+    ofEllipse(location.x, location.y, mass*25, mass*25);
 }
 
 void Mover::checkEdges(){
     
     if (location.x > ofGetWidth()) {
-        location.x = ofGetWidth();
-        velocity.x *= -1;
+	location.x = 0;
     }
     else if (location.x < 0) {
-        velocity.x *= -1;
-        location.x = 0;
+	location.x = ofGetWidth();
     }
     
     if (location.y > ofGetHeight()) {

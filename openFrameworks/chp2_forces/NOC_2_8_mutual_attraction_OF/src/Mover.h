@@ -9,13 +9,15 @@
 #include <iostream>
 #include "ofMain.h"
 
+
 class Mover {
     public:
     
     Mover();
+	void init(float m, float x , float y);
     void update();
     void display();
-    void checkEdges();
+    ofVec2f attract(Mover m);
     void applyForce(ofVec2f force); 
     
     // The Mover tracks location, velocity, and acceleration 
@@ -23,5 +25,7 @@ class Mover {
     ofVec2f velocity;
     ofVec2f acceleration;
     float mass;
-
+	
+	float g;
+    
 };

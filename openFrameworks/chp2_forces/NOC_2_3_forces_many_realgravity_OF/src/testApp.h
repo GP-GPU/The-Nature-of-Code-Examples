@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "Mover.h"
-#include "newFile.h"
 
 class testApp : public ofBaseApp{
 
@@ -22,5 +21,5 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 
-		Mover m;
+		vector <Mover> movers;
 };

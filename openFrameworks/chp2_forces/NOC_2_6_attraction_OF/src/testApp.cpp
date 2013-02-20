@@ -8,7 +8,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    ofSetWindowShape(800, 200);
+ 
     ofEnableSmoothing();
     ofSetCircleResolution(100);
     ofBackground(255);
@@ -17,21 +17,19 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    ofVec2f wind;
-    wind.set(0.01,0);
-    ofVec2f gravity;
-    gravity.set(0,0.1);
-    m.applyForce(wind);
-    m.applyForce(gravity);
-    
-    m.update();
-    m.checkEdges();
+	
+	ofVec2f force = a.attract(m);
+	m.applyForce(force);
+	m.update();
+	
+	a.drag();
+	a.hover(ofGetMouseX(),ofGetMouseY());
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    m.display();
-	
+	a.display();
+	m.display();
 }
 
 //--------------------------------------------------------------
@@ -56,12 +54,12 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	
+	a.clicked(ofGetMouseX(),ofGetMouseY());
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-	
+	 a.stopDragging(); 
 }
 
 //--------------------------------------------------------------

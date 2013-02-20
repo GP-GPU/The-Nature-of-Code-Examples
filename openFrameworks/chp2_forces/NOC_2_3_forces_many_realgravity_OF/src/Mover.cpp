@@ -1,6 +1,4 @@
-//// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+//
 //  Mover.cpp
 //  NOC_1_10_motion101_OF
 //
@@ -10,10 +8,14 @@
 #include "Mover.h"
 
 Mover::Mover() {
-    location.set(30,30);
+}
+
+
+void Mover::init (float m, float x , float y) {
+	mass = m;
+    location.set(x,y);
     velocity.set(0,0);
     acceleration.set(0,0);
-    mass = 1;
 }
 
 void Mover::applyForce(ofVec2f force) {
@@ -23,22 +25,25 @@ void Mover::applyForce(ofVec2f force) {
 }
 
 void Mover::update() {
-	
+
     velocity += acceleration;
     location += velocity;
-    acceleration *= 0;
-	
+    acceleration *= 0; 
+        
 }
 
 void Mover::display(){
     ofFill();
-    ofSetColor(127);
-    ofEllipse(location.x, location.y, 48, 48);
-    
+    ofSetColor(0,127);
+	ofEnableAlphaBlending();
+    ofEllipse(location.x, location.y, mass*16,mass*16);
+    ofDisableAlphaBlending();
+	
     ofNoFill();
     ofSetColor(0);
     ofSetLineWidth(2);
-    ofEllipse(location.x, location.y, 48, 48);
+    ofEllipse(location.x, location.y, mass*16,mass*16);
+	
 }
 
 void Mover::checkEdges(){

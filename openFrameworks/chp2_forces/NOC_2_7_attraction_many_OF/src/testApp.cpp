@@ -8,30 +8,40 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    ofSetWindowShape(800, 200);
+ 
     ofEnableSmoothing();
     ofSetCircleResolution(100);
     ofBackground(255);
     ofSetFrameRate(60);
+	
+	for (int i = 0; i < 10; i++) {
+		Mover m;
+		m.init(ofRandom(0.1, 2), ofRandom(ofGetWidth()), ofRandom(ofGetHeight()));
+		movers.push_back(m);
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    ofVec2f wind;
-    wind.set(0.01,0);
-    ofVec2f gravity;
-    gravity.set(0,0.1);
-    m.applyForce(wind);
-    m.applyForce(gravity);
-    
-    m.update();
-    m.checkEdges();
+	
+	
+	for (int i = 0; i < movers.size(); i++) {
+	ofVec2f force = a.attract(movers[i]);
+	movers[i].applyForce(force);
+	movers[i].update();
+	}
+		
+		
+	a.drag();
+	a.hover(ofGetMouseX(),ofGetMouseY());
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    m.display();
-	
+	a.display();
+	for (int i = 0; i < movers.size(); i++) {
+		movers[i].display();
+	}
 }
 
 //--------------------------------------------------------------
@@ -56,12 +66,12 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	
+	a.clicked(ofGetMouseX(),ofGetMouseY());
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-	
+	 a.stopDragging(); 
 }
 
 //--------------------------------------------------------------

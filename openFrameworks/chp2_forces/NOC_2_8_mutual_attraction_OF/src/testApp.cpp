@@ -8,30 +8,39 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    ofSetWindowShape(800, 200);
+ 
     ofEnableSmoothing();
     ofSetCircleResolution(100);
     ofBackground(255);
     ofSetFrameRate(60);
+	
+	for (int i = 0; i < 20; i++) {
+		Mover m;
+		m.init(ofRandom(0.1, 2), ofRandom(ofGetWidth()), ofRandom(ofGetHeight()));
+		movers.push_back(m);
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    ofVec2f wind;
-    wind.set(0.01,0);
-    ofVec2f gravity;
-    gravity.set(0,0.1);
-    m.applyForce(wind);
-    m.applyForce(gravity);
-    
-    m.update();
-    m.checkEdges();
+	
+	for (int i = 0; i < movers.size(); i++) {
+		for (int j = 0; j < movers.size(); j++) {
+			if (i != j) {
+				ofVec2f force = movers[j].attract(movers[i]);
+				movers[i].applyForce(force);
+			}
+		}
+		
+		movers[i].update();
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    m.display();
-	
+	for (int i = 0; i < movers.size(); i++) {
+		movers[i].display();
+	}
 }
 
 //--------------------------------------------------------------
