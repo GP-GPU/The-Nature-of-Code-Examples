@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Mover.h"
+#include "newFile.h"
 
 class testApp : public ofBaseApp{
 

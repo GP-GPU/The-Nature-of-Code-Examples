@@ -23,6 +23,8 @@ class Mover {
     ofVec2f velocity;
     ofVec2f acceleration;
     
+
+    
     // The Mover's maximum speed
     float topspeed;
     

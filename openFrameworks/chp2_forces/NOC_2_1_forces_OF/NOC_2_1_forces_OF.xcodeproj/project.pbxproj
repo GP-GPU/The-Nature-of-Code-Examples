@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43311A6A16D550E5006C1A21 /* newFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43311A6916D550E5006C1A21 /* newFile.cpp */; };
 		4387203916BB2AF0002FE50E /* Mover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4387203716BB2AF0002FE50E /* Mover.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -61,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43311A6816D550D7006C1A21 /* newFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newFile.h; sourceTree = "<group>"; };
+		43311A6916D550E5006C1A21 /* newFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newFile.cpp; sourceTree = "<group>"; };
 		4387203716BB2AF0002FE50E /* Mover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mover.cpp; sourceTree = "<group>"; };
 		4387203816BB2AF0002FE50E /* Mover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mover.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				4387203716BB2AF0002FE50E /* Mover.cpp */,
+				43311A6816D550D7006C1A21 /* newFile.h */,
+				43311A6916D550E5006C1A21 /* newFile.cpp */,
 				4387203816BB2AF0002FE50E /* Mover.h */,
 			);
 			path = src;
@@ -292,6 +297,7 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				4387203916BB2AF0002FE50E /* Mover.cpp in Sources */,
+				43311A6A16D550E5006C1A21 /* newFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

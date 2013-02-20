@@ -13,7 +13,7 @@ class Mover {
     public:
     
     Mover();
-    void init();
+     void init();
     void update();
     void display();
     void checkEdges();
@@ -24,5 +24,5 @@ class Mover {
     ofVec2f velocity;
     ofVec2f acceleration;
     float mass;
-    
+
 };
